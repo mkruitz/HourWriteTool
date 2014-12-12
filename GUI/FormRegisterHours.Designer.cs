@@ -50,6 +50,7 @@
             this.checkBoxPauze.Text = "Pauze";
             this.checkBoxPauze.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBoxPauze.UseVisualStyleBackColor = true;
+            this.checkBoxPauze.CheckedChanged += new System.EventHandler(this.checkBoxPauze_CheckedChanged);
             // 
             // buttonStart
             // 
@@ -59,6 +60,7 @@
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonStop
             // 
@@ -69,6 +71,7 @@
             this.buttonStop.TabIndex = 2;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // textBoxRemark
             // 
