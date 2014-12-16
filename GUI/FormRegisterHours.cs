@@ -26,6 +26,9 @@ namespace GUI
         private void buttonStart_Click(object sender, EventArgs e)
         {
             Save(HourWriteType.StartWork);
+            buttonStart.Enabled = false;
+            buttonStop.Enabled = true;
+            checkBoxPauze.Enabled = true;
         }
 
         private void checkBoxPauze_CheckedChanged(object sender, EventArgs e)
@@ -34,11 +37,15 @@ namespace GUI
                 ? HourWriteType.StartPauze
                 : HourWriteType.StopPauze
                 );
+            buttonStop.Enabled = !checkBoxPauze.Checked;
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
             Save(HourWriteType.StopWork);
+            buttonStart.Enabled = true;
+            buttonStop.Enabled = false;
+            checkBoxPauze.Enabled = false;
         }
 
         private void Save(HourWriteType type)
@@ -50,6 +57,22 @@ namespace GUI
                 Remark = textBoxRemark.Text,
             });
             textBoxRemark.Clear();
+            listBoxRecords.DataSource = Store.GetEvents();
+        }
+
+        private void FormRegisterHours_Load(object sender, EventArgs e)
+        {
+            listBoxRecords.DataSource = Store.GetEvents();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Store.Clear();
         }
     }
 }
