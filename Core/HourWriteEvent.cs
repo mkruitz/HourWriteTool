@@ -7,6 +7,11 @@ namespace Core
         public DateTime HappendOn { get; set; }
         public HourWriteType Type { get; set; }
         public String Remark { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1} {2}", HappendOn, Type, Remark);
+        }
     }
 
     public enum HourWriteType
