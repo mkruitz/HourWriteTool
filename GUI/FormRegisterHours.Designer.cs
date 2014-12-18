@@ -38,6 +38,7 @@
             this.recordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,11 +107,20 @@
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Text = "menuStrip1";
             // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 24);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(259, 119);
+            this.panelMain.TabIndex = 8;
+            // 
             // FormRegisterHours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 143);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxRecords);
             this.Controls.Add(this.menuStrip);
@@ -137,6 +147,7 @@
         private System.Windows.Forms.ToolStripMenuItem recordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
 

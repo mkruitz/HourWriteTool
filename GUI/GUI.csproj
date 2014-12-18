@@ -62,11 +62,14 @@
     <Compile Include="FormRegisterHours.Designer.cs">
       <DependentUpon>FormRegisterHours.cs</DependentUpon>
     </Compile>
+    <Compile Include="IUserControlWithStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RavenStore.cs" />
     <Compile Include="UserControlAddWriteEvent.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControlAddWriteEvent.Designer.cs">
       <DependentUpon>UserControlAddWriteEvent.cs</DependentUpon>

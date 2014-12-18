@@ -4,7 +4,7 @@ using Core;
 
 namespace GUI
 {
-    public partial class UserControlAddWriteEvent : UserControl
+    public partial class UserControlAddWriteEvent : UserControlWithStore
     {
         public IStore Store { set; private get; }
 

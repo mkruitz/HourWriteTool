@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 37);
+            this.label1.Location = new System.Drawing.Point(0, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 16;
@@ -49,17 +49,17 @@
             this.textBoxRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxRemark.Location = new System.Drawing.Point(3, 53);
+            this.textBoxRemark.Location = new System.Drawing.Point(0, 53);
             this.textBoxRemark.Multiline = true;
             this.textBoxRemark.Name = "textBoxRemark";
-            this.textBoxRemark.Size = new System.Drawing.Size(237, 34);
+            this.textBoxRemark.Size = new System.Drawing.Size(242, 34);
             this.textBoxRemark.TabIndex = 17;
             // 
             // buttonStop
             // 
             this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonStop.Enabled = false;
-            this.buttonStop.Location = new System.Drawing.Point(165, 0);
+            this.buttonStop.Location = new System.Drawing.Point(167, 0);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 34);
             this.buttonStop.TabIndex = 15;
@@ -69,7 +69,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(3, 0);
+            this.buttonStart.Location = new System.Drawing.Point(0, 0);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 34);
             this.buttonStart.TabIndex = 13;
@@ -79,13 +79,11 @@
             // 
             // checkBoxPauze
             // 
-            this.checkBoxPauze.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxPauze.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBoxPauze.Enabled = false;
-            this.checkBoxPauze.Location = new System.Drawing.Point(84, 0);
+            this.checkBoxPauze.Location = new System.Drawing.Point(81, 0);
             this.checkBoxPauze.Name = "checkBoxPauze";
-            this.checkBoxPauze.Size = new System.Drawing.Size(75, 34);
+            this.checkBoxPauze.Size = new System.Drawing.Size(78, 34);
             this.checkBoxPauze.TabIndex = 14;
             this.checkBoxPauze.Text = "Pauze";
             this.checkBoxPauze.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,7 +100,7 @@
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.checkBoxPauze);
             this.Name = "UserControlAddWriteEvent";
-            this.Size = new System.Drawing.Size(249, 92);
+            this.Size = new System.Drawing.Size(246, 92);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Core;
 
@@ -6,26 +7,40 @@ namespace GUI
 {
     public partial class FormRegisterHours : Form
     {
-        private IStore _iStore;
-        private UserControlAddWriteEvent _uc;
+        private enum ViewState
+        {
+            WriteHour,
+        }
 
-        public IStore Store {
-            set
-            {
-                _iStore = value;
-                _uc.Store = value;
+        private void SetNextState(ViewState nextState)
+        {
+            panelMain.Controls.Clear();
+            var newView = views[nextState];
+            newView.Parent = panelMain;
+            newView.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(newView);
+            
+            CurrentState = nextState;
+        }
 
-            }
-            private get { return _iStore;  } }
+        private ViewState CurrentState { get; set; }
+        private readonly Dictionary<ViewState, UserControlWithStore> views;
+        public IStore Store { set; private get; }
 
         public FormRegisterHours()
         {
+            views = new Dictionary<ViewState, UserControlWithStore>
+            {
+                {ViewState.WriteHour, new UserControlAddWriteEvent()}
+            };
+
             InitializeComponent();
-            //this.SuspendLayout();
-            _uc = new UserControlAddWriteEvent {Parent = this, Dock = DockStyle.Fill};
+            SetNextState(ViewState.WriteHour);
+            /*selectedUserControl = new UserControlAddWriteEvent {Parent = this, Dock = DockStyle.Fill};
             Controls.Remove(menuStrip);
-            Controls.Add(_uc);
+            Controls.Add(selectedUserControl);
             Controls.Add(menuStrip);
+             * */
         }
 
         private void FormRegisterHours_Resize(object sender, EventArgs e)
