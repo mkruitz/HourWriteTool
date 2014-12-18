@@ -6,11 +6,26 @@ namespace GUI
 {
     public partial class FormRegisterHours : Form
     {
-        public IStore Store { set; private get; }
+        private IStore _iStore;
+        private UserControlAddWriteEvent _uc;
+
+        public IStore Store {
+            set
+            {
+                _iStore = value;
+                _uc.Store = value;
+
+            }
+            private get { return _iStore;  } }
 
         public FormRegisterHours()
         {
             InitializeComponent();
+            //this.SuspendLayout();
+            _uc = new UserControlAddWriteEvent {Parent = this, Dock = DockStyle.Fill};
+            Controls.Remove(menuStrip);
+            Controls.Add(_uc);
+            Controls.Add(menuStrip);
         }
 
         private void FormRegisterHours_Resize(object sender, EventArgs e)
@@ -21,43 +36,6 @@ namespace GUI
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             WindowState = FormWindowState.Normal;
-        }
-
-        private void buttonStart_Click(object sender, EventArgs e)
-        {
-            Save(HourWriteType.StartWork);
-            buttonStart.Enabled = false;
-            buttonStop.Enabled = true;
-            checkBoxPauze.Enabled = true;
-        }
-
-        private void checkBoxPauze_CheckedChanged(object sender, EventArgs e)
-        {
-            Save(checkBoxPauze.Checked
-                ? HourWriteType.StartPauze
-                : HourWriteType.StopPauze
-                );
-            buttonStop.Enabled = !checkBoxPauze.Checked;
-        }
-
-        private void buttonStop_Click(object sender, EventArgs e)
-        {
-            Save(HourWriteType.StopWork);
-            buttonStart.Enabled = true;
-            buttonStop.Enabled = false;
-            checkBoxPauze.Enabled = false;
-        }
-
-        private void Save(HourWriteType type)
-        {
-            Store.Save(new HourWriteEvent
-            {
-                HappendOn = DateTime.Now,
-                Type = type,
-                Remark = textBoxRemark.Text,
-            });
-            textBoxRemark.Clear();
-            listBoxRecords.DataSource = Store.GetEvents();
         }
 
         private void FormRegisterHours_Load(object sender, EventArgs e)
