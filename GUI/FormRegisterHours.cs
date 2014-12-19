@@ -36,11 +36,6 @@ namespace GUI
 
             InitializeComponent();
             SetNextState(ViewState.WriteHour);
-            /*selectedUserControl = new UserControlAddWriteEvent {Parent = this, Dock = DockStyle.Fill};
-            Controls.Remove(menuStrip);
-            Controls.Add(selectedUserControl);
-            Controls.Add(menuStrip);
-             * */
         }
 
         private void FormRegisterHours_Resize(object sender, EventArgs e)
