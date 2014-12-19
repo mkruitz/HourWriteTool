@@ -68,8 +68,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RavenStore.cs" />
+    <Compile Include="UserControlShowRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlShowRecords.Designer.cs">
+      <DependentUpon>UserControlShowRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlAddWriteEvent.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlAddWriteEvent.Designer.cs">
       <DependentUpon>UserControlAddWriteEvent.cs</DependentUpon>
@@ -87,6 +93,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlShowRecords.resx">
+      <DependentUpon>UserControlShowRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlAddWriteEvent.resx">
       <DependentUpon>UserControlAddWriteEvent.cs</DependentUpon>
     </EmbeddedResource>

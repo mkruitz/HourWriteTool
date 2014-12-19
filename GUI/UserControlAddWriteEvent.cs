@@ -6,8 +6,6 @@ namespace GUI
 {
     public partial class UserControlAddWriteEvent : UserControlWithStore
     {
-        public IStore Store { set; private get; }
-
         public UserControlAddWriteEvent()
         {
             InitializeComponent();

@@ -10,20 +10,10 @@ namespace GUI
         private enum ViewState
         {
             WriteHour,
+            ShowRecords,
+            ClearAll
         }
 
-        private void SetNextState(ViewState nextState)
-        {
-            panelMain.Controls.Clear();
-            var newView = views[nextState];
-            newView.Parent = panelMain;
-            newView.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(newView);
-            
-            CurrentState = nextState;
-        }
-
-        private ViewState CurrentState { get; set; }
         private readonly Dictionary<ViewState, UserControlWithStore> views;
         public IStore Store { set; private get; }
 
@@ -31,11 +21,23 @@ namespace GUI
         {
             views = new Dictionary<ViewState, UserControlWithStore>
             {
-                {ViewState.WriteHour, new UserControlAddWriteEvent()}
+                { ViewState.WriteHour, new UserControlAddWriteEvent() },
+                { ViewState.ShowRecords, new UserControlShowRecords() }
             };
 
             InitializeComponent();
             SetNextState(ViewState.WriteHour);
+        }
+
+        private void SetNextState(ViewState nextState)
+        {
+            panelMain.Controls.Clear();
+            var newView = views[nextState];
+            Height += newView.Height - panelMain.Height;
+            newView.Parent = panelMain;
+            newView.Dock = DockStyle.Fill;
+            newView.Store = Store;
+            panelMain.Controls.Add(newView);
         }
 
         private void FormRegisterHours_Resize(object sender, EventArgs e)
@@ -61,6 +63,16 @@ namespace GUI
         private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Store.Clear();
+        }
+
+        private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetNextState(ViewState.ShowRecords);
+        }
+
+        private void basicInputToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetNextState(ViewState.WriteHour);
         }
     }
 }
