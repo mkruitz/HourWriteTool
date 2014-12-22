@@ -1,8 +1,4 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -21,6 +17,7 @@ namespace GUI
             {
                 Store = new RavenStore()
             };
+            form.Init();
             Application.Run(form);
         }
     }

@@ -26,7 +26,11 @@ namespace GUI
             };
 
             InitializeComponent();
-            SetNextState(ViewState.WriteHour);
+        }
+
+        public void Init()
+        {
+            SetNextState(ViewState.WriteHour);   
         }
 
         private void SetNextState(ViewState nextState)
