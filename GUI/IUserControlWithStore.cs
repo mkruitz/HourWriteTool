@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 using Core;
 
 namespace GUI
@@ -18,6 +19,8 @@ namespace GUI
         }
 
         public event StoreChangedEventHandler StoreChanged;
+
+        public Size DefaultSize { get; set; }
     }
 
     public delegate void StoreChangedEventHandler();

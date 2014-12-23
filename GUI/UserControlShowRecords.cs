@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace GUI
 {
@@ -8,6 +9,7 @@ namespace GUI
         {
             InitializeComponent();
             StoreChanged += OnStoreChanged;
+            DefaultSize = new Size(246, 295);
         }
 
         private void OnStoreChanged()

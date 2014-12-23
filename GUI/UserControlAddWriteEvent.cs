@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Core;
 
@@ -9,6 +10,7 @@ namespace GUI
         public UserControlAddWriteEvent()
         {
             InitializeComponent();
+            DefaultSize = new Size(246, 92);
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
