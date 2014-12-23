@@ -11,7 +11,7 @@ namespace GUI
         {
             InitializeComponent();
             StoreChanged += OnStoreChanged;
-            DefaultSize = new Size(388, 273);
+            SizeToStart = new Size(388, 273);
         }
 
         private void OnStoreChanged()

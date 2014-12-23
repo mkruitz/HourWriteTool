@@ -10,7 +10,7 @@ namespace GUI
         public UserControlAddWriteEvent()
         {
             InitializeComponent();
-            DefaultSize = new Size(246, 92);
+            SizeToStart = new Size(246, 92);
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

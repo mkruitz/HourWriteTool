@@ -39,7 +39,8 @@ namespace GUI
         {
             panelMain.Controls.Clear();
             var newView = views[nextState];
-            Height += newView.Height - panelMain.Height;
+            Height += newView.SizeToStart.Height - panelMain.Height;
+            Width += newView.SizeToStart.Width - panelMain.Width;
             newView.Parent = panelMain;
             newView.Dock = DockStyle.Fill;
             newView.Store = Store;

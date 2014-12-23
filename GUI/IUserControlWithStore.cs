@@ -20,7 +20,7 @@ namespace GUI
 
         public event StoreChangedEventHandler StoreChanged;
 
-        public Size DefaultSize { get; set; }
+        public Size SizeToStart { get; set; }
     }
 
     public delegate void StoreChangedEventHandler();
