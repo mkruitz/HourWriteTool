@@ -22,7 +22,7 @@ namespace GUI
             views = new Dictionary<ViewState, UserControlWithStore>
             {
                 { ViewState.WriteHour, new UserControlAddWriteEvent() },
-                { ViewState.ShowRecords, new UserControlShowRecords() }
+                { ViewState.ShowRecords, new UserControlShowRecords() },
             };
 
             InitializeComponent();
@@ -66,7 +66,8 @@ namespace GUI
 
         private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Store.Clear();
+            MessageBox.Show("Disabled");
+            //Store.Clear();
         }
 
         private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
