@@ -68,6 +68,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RavenStore.cs" />
+    <Compile Include="UserControlEditRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEditRecords.Designer.cs">
+      <DependentUpon>UserControlEditRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlShowRecords.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlEditRecords.resx">
+      <DependentUpon>UserControlEditRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlShowRecords.resx">
       <DependentUpon>UserControlShowRecords.cs</DependentUpon>
     </EmbeddedResource>
