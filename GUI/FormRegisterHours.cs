@@ -11,6 +11,7 @@ namespace GUI
         {
             WriteHour,
             ShowRecords,
+            EditRecords,
             ClearAll
         }
 
@@ -23,6 +24,7 @@ namespace GUI
             {
                 { ViewState.WriteHour, new UserControlAddWriteEvent() },
                 { ViewState.ShowRecords, new UserControlShowRecords() },
+                { ViewState.EditRecords, new UserControlEditRecords() }
             };
 
             InitializeComponent();
@@ -78,6 +80,11 @@ namespace GUI
         private void basicInputToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetNextState(ViewState.WriteHour);
+        }
+
+        private void editAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetNextState(ViewState.EditRecords);
         }
     }
 }

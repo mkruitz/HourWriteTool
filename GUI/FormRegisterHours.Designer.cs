@@ -36,11 +36,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.basicInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.showAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.basicInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,11 +88,26 @@
             // 
             this.recordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.basicInputToolStripMenuItem,
+            this.editAllToolStripMenuItem,
             this.showAllToolStripMenuItem,
             this.clearAllToolStripMenuItem});
             this.recordsToolStripMenuItem.Name = "recordsToolStripMenuItem";
             this.recordsToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.recordsToolStripMenuItem.Text = "Views";
+            // 
+            // basicInputToolStripMenuItem
+            // 
+            this.basicInputToolStripMenuItem.Name = "basicInputToolStripMenuItem";
+            this.basicInputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.basicInputToolStripMenuItem.Text = "Write";
+            this.basicInputToolStripMenuItem.Click += new System.EventHandler(this.basicInputToolStripMenuItem_Click);
+            // 
+            // showAllToolStripMenuItem
+            // 
+            this.showAllToolStripMenuItem.Name = "showAllToolStripMenuItem";
+            this.showAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showAllToolStripMenuItem.Text = "Show all";
+            this.showAllToolStripMenuItem.Click += new System.EventHandler(this.showAllToolStripMenuItem_Click);
             // 
             // clearAllToolStripMenuItem
             // 
@@ -119,19 +135,12 @@
             this.panelMain.Size = new System.Drawing.Size(259, 119);
             this.panelMain.TabIndex = 8;
             // 
-            // showAllToolStripMenuItem
+            // editAllToolStripMenuItem
             // 
-            this.showAllToolStripMenuItem.Name = "showAllToolStripMenuItem";
-            this.showAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.showAllToolStripMenuItem.Text = "Show all";
-            this.showAllToolStripMenuItem.Click += new System.EventHandler(this.showAllToolStripMenuItem_Click);
-            // 
-            // basicInputToolStripMenuItem
-            // 
-            this.basicInputToolStripMenuItem.Name = "basicInputToolStripMenuItem";
-            this.basicInputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.basicInputToolStripMenuItem.Text = "Write";
-            this.basicInputToolStripMenuItem.Click += new System.EventHandler(this.basicInputToolStripMenuItem_Click);
+            this.editAllToolStripMenuItem.Name = "editAllToolStripMenuItem";
+            this.editAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editAllToolStripMenuItem.Text = "Edit all";
+            this.editAllToolStripMenuItem.Click += new System.EventHandler(this.editAllToolStripMenuItem_Click);
             // 
             // FormRegisterHours
             // 
@@ -168,6 +177,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.ToolStripMenuItem showAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem basicInputToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editAllToolStripMenuItem;
     }
 }
 
