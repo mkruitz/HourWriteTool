@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using Core;
 
 namespace GUI
@@ -10,7 +9,16 @@ namespace GUI
         public UserControlAddWriteEvent()
         {
             InitializeComponent();
-            SizeToStart = new Size(246, 92);
+        }
+
+        public override string Title
+        {
+            get { return "Write hours"; }
+        }
+
+        public override Size SizeToStart
+        {
+            get { return new Size(246, 92); }
         }
 
         private void buttonStart_Click(object sender, EventArgs e)

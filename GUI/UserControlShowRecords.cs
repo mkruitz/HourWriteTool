@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace GUI
 {
@@ -9,7 +8,16 @@ namespace GUI
         {
             InitializeComponent();
             StoreChanged += OnStoreChanged;
-            SizeToStart = new Size(246, 295);
+        }
+
+        public override string Title
+        {
+            get { return "Show Records"; }
+        }
+
+        public override Size SizeToStart
+        {
+            get { return new Size(246, 295); }
         }
 
         private void OnStoreChanged()

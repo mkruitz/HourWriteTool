@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Core;
+﻿using System.Drawing;
 
 namespace GUI
 {
@@ -11,12 +8,22 @@ namespace GUI
         {
             InitializeComponent();
             StoreChanged += OnStoreChanged;
-            SizeToStart = new Size(388, 273);
+        }
+
+        public override string Title
+        {
+            get { return "Edit Records"; }
+        }
+
+        public override Size SizeToStart
+        {
+            get { return new Size(388, 273); }
         }
 
         private void OnStoreChanged()
         {
             dataGridView.DataSource = Store.GetEvents();
         }
+
     }
 }
