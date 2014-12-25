@@ -1,10 +1,11 @@
-﻿using System.Drawing;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Core;
 
 namespace GUI
 {
-    public class UserControlWithStore : UserControl
+    public abstract class UserControlWithStore : UserControl
     {
         private IStore store;
         public IStore Store
@@ -20,8 +21,7 @@ namespace GUI
 
         public event StoreChangedEventHandler StoreChanged;
 
-        public Size SizeToStart { get; set; }
+        public abstract String Title { get; }
+        public abstract Size SizeToStart { get; }
     }
-
-    public delegate void StoreChangedEventHandler();
 }
