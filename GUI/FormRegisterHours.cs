@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Core;
 
@@ -7,38 +6,21 @@ namespace GUI
 {
     public partial class FormRegisterHours : Form
     {
-        private enum ViewState
-        {
-            WriteHour,
-            ShowRecords,
-            EditRecords,
-            ClearAll
-        }
-
-        private readonly Dictionary<ViewState, UserControlWithStore> views;
         public IStore Store { set; private get; }
 
         public FormRegisterHours()
         {
-            views = new Dictionary<ViewState, UserControlWithStore>
-            {
-                { ViewState.WriteHour, new UserControlAddWriteEvent() },
-                { ViewState.ShowRecords, new UserControlShowRecords() },
-                { ViewState.EditRecords, new UserControlEditRecords() }
-            };
-
             InitializeComponent();
         }
 
         public void Init()
         {
-            SetNextState(ViewState.WriteHour);   
+            SetNextState(new UserControlAddWriteEvent());   
         }
 
-        private void SetNextState(ViewState nextState)
+        private void SetNextState(UserControlWithStore newView)
         {
             panelMain.Controls.Clear();
-            var newView = views[nextState];
             Height += newView.SizeToStart.Height - panelMain.Height;
             Width += newView.SizeToStart.Width - panelMain.Width;
             newView.Parent = panelMain;
@@ -75,17 +57,17 @@ namespace GUI
 
         private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetNextState(ViewState.ShowRecords);
+            SetNextState(new UserControlShowRecords());
         }
 
         private void basicInputToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetNextState(ViewState.WriteHour);
+            SetNextState(new UserControlAddWriteEvent());
         }
 
         private void editAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SetNextState(ViewState.EditRecords);
+            SetNextState(new UserControlEditRecords());
         }
     }
 }
