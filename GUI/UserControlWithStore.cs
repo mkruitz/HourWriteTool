@@ -5,7 +5,7 @@ using Core;
 
 namespace GUI
 {
-    public abstract class UserControlWithStore : UserControl
+    public class UserControlWithStore : UserControl
     {
         private IStore store;
         public IStore Store
@@ -21,7 +21,7 @@ namespace GUI
 
         public event StoreChangedEventHandler StoreChanged;
 
-        public abstract String Title { get; }
-        public abstract Size SizeToStart { get; }
+        public virtual String Title { get { throw new NotImplementedException(); } }
+        public virtual Size SizeToStart { get { throw new NotImplementedException(); } }
     }
 }
