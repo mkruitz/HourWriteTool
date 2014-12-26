@@ -17,7 +17,13 @@ namespace GUI
             {
                 Store = new RavenStore()
             };
-            form.Init();
+
+            var startView = new UserControlAddWriteEvent();
+            form.AddView(startView);
+            form.AddView(new UserControlShowRecords());
+            form.AddView(new UserControlEditRecords());
+            form.SetNextState(startView);
+            
             Application.Run(form);
         }
     }

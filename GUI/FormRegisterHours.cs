@@ -13,12 +13,14 @@ namespace GUI
             InitializeComponent();
         }
 
-        public void Init()
+        public void AddView(UserControlWithStore view)
         {
-            SetNextState(new UserControlAddWriteEvent());   
+            var item = new ToolStripMenuItem(view.Title);
+            item.Click += (sender, args) => SetNextState(view);
+            viewsToolStripMenuItem.DropDownItems.Add(item);
         }
 
-        private void SetNextState(UserControlWithStore newView)
+        public void SetNextState(UserControlWithStore newView)
         {
             panelMain.Controls.Clear();
             Height += newView.SizeToStart.Height - panelMain.Height;
@@ -53,21 +55,6 @@ namespace GUI
         {
             MessageBox.Show("Disabled");
             //Store.Clear();
-        }
-
-        private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetNextState(new UserControlShowRecords());
-        }
-
-        private void basicInputToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetNextState(new UserControlAddWriteEvent());
-        }
-
-        private void editAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SetNextState(new UserControlEditRecords());
         }
     }
 }
