@@ -2,10 +2,14 @@
 
 namespace Core
 {
-    public interface IStore
+    public interface IStore : IStoreReader
     {
         void Save(HourWriteEvent writeEvent);
-        IList<HourWriteEvent> GetEvents();
         void Clear();
+    }
+
+    public interface IStoreReader
+    {
+        IList<HourWriteEvent> GetEvents();
     }
 }
