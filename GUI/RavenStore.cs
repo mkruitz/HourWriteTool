@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using Core;
 using Raven.Client.Embedded;
 using Raven.Database.Server;
@@ -8,23 +11,20 @@ namespace GUI
 {
     public class RavenStore : IStore
     {
-        private readonly EmbeddableDocumentStore _store;
+        private readonly EmbeddableDocumentStore store;
 
         public RavenStore()
         {
-            _store = new EmbeddableDocumentStore
+            store = new EmbeddableDocumentStore
             {
-                DataDirectory = "D:\\RavenDB\\Data\\",
-                //DefaultDatabase = "HourWriteTool"
-                //UseEmbeddedHttpServer = true,
+                DataDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data"),
             };
-            //NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8081);
-            _store.Initialize();
+            store.Initialize();
         }
 
         public void Save(HourWriteEvent writeEvent)
         {
-            using (var session = _store.OpenSession())
+            using (var session = store.OpenSession())
             {
                 session.Store(writeEvent);
                 session.SaveChanges();
@@ -33,7 +33,7 @@ namespace GUI
 
         public IList<HourWriteEvent> GetEvents()
         {
-            using (var session = _store.OpenSession())
+            using (var session = store.OpenSession())
             {
                 return session.Query<HourWriteEvent>().ToList();
             }
@@ -41,7 +41,7 @@ namespace GUI
 
         public void Clear()
         {
-            using (var session = _store.OpenSession())
+            using (var session = store.OpenSession())
             {
                 foreach(var writeEvent in session.Query<HourWriteEvent>())
                 {
