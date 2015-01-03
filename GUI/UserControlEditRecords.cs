@@ -25,5 +25,8 @@ namespace GUI
             dataGridView.DataSource = Store.GetEvents();
         }
 
+        private void dataGridView_CellValueChanged(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+        }
     }
 }
