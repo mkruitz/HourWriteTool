@@ -28,9 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.listBoxRecords = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // listBoxRecords
+            // 
+            this.listBoxRecords.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBoxRecords.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRecords.FormattingEnabled = true;
+            this.listBoxRecords.ItemHeight = 14;
+            this.listBoxRecords.Location = new System.Drawing.Point(0, 25);
+            this.listBoxRecords.Name = "listBoxRecords";
+            this.listBoxRecords.Size = new System.Drawing.Size(246, 270);
+            this.listBoxRecords.TabIndex = 17;
             // 
             // label1
             // 
@@ -40,15 +51,6 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Records";
-            // 
-            // listBoxRecords
-            // 
-            this.listBoxRecords.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBoxRecords.FormattingEnabled = true;
-            this.listBoxRecords.Location = new System.Drawing.Point(0, 18);
-            this.listBoxRecords.Name = "listBoxRecords";
-            this.listBoxRecords.Size = new System.Drawing.Size(246, 277);
-            this.listBoxRecords.TabIndex = 17;
             // 
             // UserControlShowRecords
             // 
