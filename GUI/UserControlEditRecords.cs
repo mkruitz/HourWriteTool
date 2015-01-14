@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using Core;
 
 namespace GUI
 {
@@ -17,7 +18,7 @@ namespace GUI
 
         public override Size SizeToStart
         {
-            get { return new Size(388, 273); }
+            get { return new Size(462, 577); }
         }
 
         private void OnStoreChanged()
@@ -27,6 +28,8 @@ namespace GUI
 
         private void dataGridView_CellValueChanged(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
+            var x = (dataGridView.CurrentRow.DataBoundItem as HourWriteEvent);
+            Store.Save(x);
         }
     }
 }

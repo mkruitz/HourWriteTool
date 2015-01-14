@@ -4,6 +4,7 @@ namespace Core
 {
     public class HourWriteEvent
     {
+        public String Id { get; set; }
         public DateTime HappendOn { get; set; }
         public HourWriteType Type { get; set; }
         public String Remark { get; set; }

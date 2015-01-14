@@ -33,7 +33,9 @@ namespace GUI
         {
             using (var session = store.OpenSession())
             {
-                return session.Query<HourWriteEvent>().ToList();
+                return session.Query<HourWriteEvent>()
+                    .OrderBy(evt => evt.HappendOn)
+                    .ToList();
             }
         }
 
