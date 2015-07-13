@@ -1,4 +1,6 @@
-﻿namespace Core
+﻿using System.Linq;
+
+namespace Core
 {
     public class WorkTimeReportGenerator
     {
@@ -11,7 +13,10 @@
 
         public Report GetReport()
         {
-            return new Report(store.GetEvents());
+            var events = store.GetEvents()
+                .Where(e => !e.IsDeleted)
+                .ToList();
+            return new Report(events);
         }
     }
 }

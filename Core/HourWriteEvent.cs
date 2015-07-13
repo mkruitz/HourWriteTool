@@ -8,6 +8,7 @@ namespace Core
         public DateTime HappendOn { get; set; }
         public HourWriteType Type { get; set; }
         public String Remark { get; set; }
+        public Boolean IsDeleted { get; set; }
 
         public override string ToString()
         {
