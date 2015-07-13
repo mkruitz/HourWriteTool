@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using Core;
 
 namespace GUI
@@ -18,7 +20,7 @@ namespace GUI
 
         public override Size SizeToStart
         {
-            get { return new Size(462, 577); }
+            get { return new Size(564, 577); }
         }
 
         private void OnStoreChanged()
@@ -26,10 +28,11 @@ namespace GUI
             dataGridView.DataSource = Store.GetEvents();
         }
 
-        private void dataGridView_CellValueChanged(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        private void dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            var x = (dataGridView.CurrentRow.DataBoundItem as HourWriteEvent);
-            Store.Save(x);
+            var updatedEvent = (dataGridView.CurrentRow.DataBoundItem as HourWriteEvent);
+            if(updatedEvent != null)
+                Store.Save(updatedEvent);
         }
     }
 }
