@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Core;
+using Raven.Client;
 using Raven.Client.Embedded;
 
 namespace GUI
@@ -33,7 +34,13 @@ namespace GUI
         {
             using (var session = store.OpenSession())
             {
+                RavenQueryStatistics stats;
+                var temp = session.Query<HourWriteEvent>()
+                    .Statistics(out stats)
+                    .Take(1).ToList();
+
                 return session.Query<HourWriteEvent>()
+                    .Take(stats.TotalResults)
                     .OrderBy(evt => evt.HappendOn)
                     .ToList();
             }
